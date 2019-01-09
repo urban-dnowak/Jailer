@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import net.sf.jailer.database.DefaultTemporaryTableManager;
 import net.sf.jailer.enhancer.FileBasedScriptEnhancer;
 import net.sf.jailer.enhancer.HelperTableEnhancer;
+import net.sf.jailer.enhancer.ClasspathFileBasedScriptEnhancer;
 import net.sf.jailer.enhancer.ScriptEnhancer;
 import net.sf.jailer.render.HtmlDataModelRenderer;
 
@@ -159,6 +160,7 @@ public class Configuration {
 	public static List<ScriptEnhancer> getScriptEnhancer() {
 		ArrayList<ScriptEnhancer> enhancer = new ArrayList<ScriptEnhancer>();
 		enhancer.add(new FileBasedScriptEnhancer());
+		enhancer.add(new ClasspathFileBasedScriptEnhancer());
 		enhancer.add(new HelperTableEnhancer());
 		return enhancer;
 	}
